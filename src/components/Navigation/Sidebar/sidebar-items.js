@@ -7,12 +7,12 @@ export const SidebarItems = [
     {
       id: 1,
       name: "Events",
-      to: "/events",
+      to: "/createevent",
     },
     {
       id: 2,
-      name: "Register",
-      to: "/register",
+      name: "Sign Up",
+      to: "/signup",
     },
   ];
   

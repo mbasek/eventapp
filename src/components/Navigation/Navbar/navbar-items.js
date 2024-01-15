@@ -11,7 +11,7 @@ export const NavbarItems = [
   },
   {
     id: 2,
-    name: "Register",
-    to: "/register",
+    name: "Sign Up",
+    to: "/signup",
   },
 ];

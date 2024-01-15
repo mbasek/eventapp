@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-import { SidebarItems } from "./sidebar-items";
 
 const SidebarContainer = styled.aside`
   position: fixed;
@@ -21,7 +20,7 @@ const SidebarContainer = styled.aside`
   top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
 `;
 
-const Sidebar = ({ isOpen, toggle }) => {
+const Sidebar = ({ isOpen, toggle, user, logOut }) => {
   return (
     <SidebarContainer isOpen={isOpen} onClick={toggle}>
       <FontAwesomeIcon
@@ -32,26 +31,56 @@ const Sidebar = ({ isOpen, toggle }) => {
       />
       <div className={styles["sidebar-wrapper"]}>
         <ul className={styles["sidebar-menu"]}>
-          {SidebarItems.map((item) => (
+          <li>
+            <Link className={styles["sidebar-link"]} to="/" onClick={toggle}>
+              Home
+            </Link>
+          </li>
+          <li>
             <Link
-              key={item.id}
               className={styles["sidebar-link"]}
-              to={item.to}
+              to="/events"
               onClick={toggle}
             >
-              {item.name}
+              Events
             </Link>
-          ))}
+          </li>
+
+          <li>
+            {user && (
+              <Link
+                className={styles["sidebar-link"]}
+                to="/stats"
+                onClick={toggle}
+              >
+                Create event
+              </Link>
+            )}
+          </li>
         </ul>
+
         {isOpen && (
           <div className={styles["sidebar-button__wrap"]}>
-            <Link
-              className={styles["sidebar-route"]}
-              to="/login"
-              onClick={toggle}
-            >
-              Log In
-            </Link>
+            {user ? (
+              <Link
+                className={styles["sidebar-route"]}
+                to="/"
+                onClick={() => {
+                  toggle();
+                  logOut();
+                }}
+              >
+                Sign out
+              </Link>
+            ) : (
+              <Link
+                className={styles["sidebar-route"]}
+                to="/login"
+                onClick={toggle}
+              >
+                Log In
+              </Link>
+            )}
           </div>
         )}
       </div>

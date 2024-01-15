@@ -1,10 +1,11 @@
 import React from "react";
-import styles from './Hero.module.css'
+import styles from "./Hero.module.css";
 import { useState } from "react";
 import Video from "../../videos/video.mp4";
 import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { getAuth, signOut } from "firebase/auth";
 
 const HeroButton = styled(Link)`
   border-radius: 50px;
@@ -38,36 +39,45 @@ const ArrowRight = styled(MdKeyboardArrowRight)`
   font-size: 20px;
 `;
 
-
 const Hero = () => {
-    const [hover, setHover] = useState(false);
-  
-    const onHover = () => {
-      setHover(!hover);
-    };
-    return (
-      <div className={styles["hero-container"]}>
-        <div className={styles["hero-background"]}>
-          <video className={styles["video-background"]} autoPlay loop muted src={Video} type="video/mp4" />
-        </div>
-        <div className={styles["hero-content"]}>
-          <h1 className={styles["hero-h1"]}>Create your Event</h1>
-          <p className={styles["hero-p"]}>dsaaaaaaaaaaaaaaaaaaaaaaaaadsadsahdsaddddddd</p>
-          <div className={styles["hero-button__wrap"]}>
-            <HeroButton
-              to="signup"
-              onMouseEnter={onHover}
-              onMouseLeave={onHover}
-              primary="true"
-              dark="true"
-            >
-              get started
-              {hover ? <ArrowForward /> : <ArrowRight />}
-            </HeroButton>
-          </div>
+  const [hover, setHover] = useState(false);
+
+  const onHover = () => {
+    setHover(!hover);
+  };
+
+  return (
+    <div className={styles["hero-container"]}>
+      <div className={styles["hero-background"]}>
+        <video
+          className={styles["video-background"]}
+          autoPlay
+          loop
+          muted
+          src={Video}
+          type="video/mp4"
+        />
+      </div>
+      <div className={styles["hero-content"]}>
+        <h1 className={styles["hero-h1"]}>Create your Event</h1>
+        <p className={styles["hero-p"]}>
+          dsaaaaaaaaaaaaaaaaaaaaaaaaadsadsahdsaddddddd
+        </p>
+        <div className={styles["hero-button__wrap"]}>
+          <HeroButton
+            to="/stats"
+            onMouseEnter={onHover}
+            onMouseLeave={onHover}
+            primary="true"
+            dark="true"
+          >
+            Create event
+            {hover ? <ArrowForward /> : <ArrowRight />}
+          </HeroButton>
         </div>
       </div>
-    );
-  };
-  
-  export default Hero;
+    </div>
+  );
+};
+
+export default Hero;
