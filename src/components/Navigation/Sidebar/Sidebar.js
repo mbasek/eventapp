@@ -45,20 +45,26 @@ const Sidebar = ({ isOpen, toggle, user, logOut }) => {
               Events
             </Link>
           </li>
-
           <li>
-            {user && (
+            {user ? (
               <Link
                 className={styles["sidebar-link"]}
-                to="/stats"
+                to="/createevent"
                 onClick={toggle}
               >
                 Create event
               </Link>
+            ) : (
+              <Link
+                className={styles["sidebar-link"]}
+                to="/register"
+                onClick={toggle}
+              >
+                Register
+              </Link>
             )}
           </li>
         </ul>
-
         {isOpen && (
           <div className={styles["sidebar-button__wrap"]}>
             {user ? (

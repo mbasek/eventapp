@@ -40,7 +40,7 @@
   cursor: pointer;
 
   &:hover {
-    color: #01bf71;
+    color: #3498db;
     transition: 0.2 ease-in-out;
   }
 }
@@ -53,7 +53,7 @@
 
 .sidebar-route {
   border-radius: 50px;
-  background: #01bf71;
+  background: #3498db;
   white-space: nowrap;
   padding: 16px 64px;
   color: #010606;

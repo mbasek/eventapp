@@ -1,0 +1,200 @@
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 20px;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.title-event {
+  font-size: 1.5rem;
+  margin: 32px 0;
+}
+
+.label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.label2 {
+  display: block;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.event-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 48px; 
+}
+
+.event-item {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.event-info {
+  flex: 1;
+}
+
+.event-image {
+  max-width: 200px;
+  border-radius: 8px;
+  margin-right: 16px;
+}
+
+.filters-container {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+/* .filter-select {
+  padding: 8px;
+  margin-right: 8px;
+  font-size: 16px;
+  margin-bottom: 16px;
+} */
+
+.date-filter-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  @media screen and (max-width: 1024px) {
+    width: 48%;
+    height: 40px;
+  }
+}
+
+.date-filter-label {
+  font-size: 14px;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+.date-filter-input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.add-new-event-card {
+  background-color: #3498db;
+  color: white;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 20%;
+}
+
+.edit-event-button {
+  background-color: #3498db;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-event-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.delete-event-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.cancel-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.select-filters {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+select {
+  height: 30px;
+  width: 150px;
+
+  @media screen and (max-width: 1024px) {
+    width: 48%;
+    height: 40px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 40px;
+  }
+}
+
+input[type="date"] {
+  height: 30px;
+
+  @media screen and (max-width: 1024px) {
+    flex: 1;
+    height: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex: 1;
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
-import { auth } from "../../firebase";
+import { auth } from "../../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ onLogin }) => {
+const Login = ({ onLogin, setUser }) => {
   const [creds, setCreds] = useState({});
   const navigate = useNavigate();
 
@@ -14,12 +14,13 @@ const Login = ({ onLogin }) => {
       .then((userCredential) => {
         const user = userCredential.user;
         onLogin && onLogin({ email: creds.email });
-        navigate("/stats");
+        localStorage.setItem("user", JSON.stringify(user));
+        navigate("/createevent");
         console.log("Login Success!");
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
         console.log("Error login! Handle properly!");
         alert("Wrong email or password, try again!");
       });
@@ -62,7 +63,7 @@ const Login = ({ onLogin }) => {
               </button>
               <Link to="/register" className={styles.text}>
                 <span className={styles.text}>
-                  Don't have an account? Sign up
+                  Don't have an account? Register
                 </span>
               </Link>
             </div>

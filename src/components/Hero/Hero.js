@@ -5,11 +5,10 @@ import Video from "../../videos/video.mp4";
 import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { getAuth, signOut } from "firebase/auth";
 
 const HeroButton = styled(Link)`
   border-radius: 50px;
-  background: ${({ primary }) => (primary ? "#01BF71" : "#010606")};
+  background: ${({ primary }) => (primary ? "#3498db" : "#010606")};
   white-space: nowrap;
   padding: ${({ big }) => (big ? "14px 48px" : "12px 30px")};
   color: ${({ dark }) => (dark ? "#010606" : "#fff")};
@@ -25,7 +24,7 @@ const HeroButton = styled(Link)`
 
   &:hover {
     transiton: all 0.2s ease-in-out;
-    background: ${({ primary }) => (primary ? "#fff" : "#01BF71")};
+    background: ${({ primary }) => (primary ? "#fff" : "#3498db")};
   }
 `;
 
@@ -60,12 +59,10 @@ const Hero = () => {
       </div>
       <div className={styles["hero-content"]}>
         <h1 className={styles["hero-h1"]}>Create your Event</h1>
-        <p className={styles["hero-p"]}>
-          dsaaaaaaaaaaaaaaaaaaaaaaaaadsadsahdsaddddddd
-        </p>
+        <p className={styles["hero-p"]}>Create your own event</p>
         <div className={styles["hero-button__wrap"]}>
           <HeroButton
-            to="/stats"
+            to="/createevent"
             onMouseEnter={onHover}
             onMouseLeave={onHover}
             primary="true"

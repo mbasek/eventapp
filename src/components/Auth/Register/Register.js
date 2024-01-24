@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Register.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase";
+import { auth } from "../../../firebase";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -14,10 +14,12 @@ const Register = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
+        alert("Register Success!");
         navigate("/login");
       })
       .catch((error) => {
         console.log(error);
+        alert("Error register! Handle properly!");
       });
   };
   return (
@@ -52,16 +54,6 @@ const Register = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               ></input>
-              {/* <label className={styles["form-label"]} htmlFor="for">
-                Confrim Password
-              </label>
-              <input
-                className={styles["form-input"]}
-                placeholder="Password"
-                name="password"
-                type="password"
-                required
-              ></input> */}
               <button className={styles["form-button"]} type="submit">
                 Submit
               </button>

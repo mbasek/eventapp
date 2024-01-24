@@ -78,10 +78,7 @@
   cursor: pointer;
 
   &:hover {
-    color: #01bf71;
-  }
-  &:active {
-    border-bottom: 3px solid #01bf71;
+    color: #3498db;
   }
 }
 
@@ -98,7 +95,7 @@
 
 .navbar-button__link {
   border-radius: 50px;
-  background: #01bf71;
+  background: #3498db;
   white-space: nowrap;
   padding: 10px 22px;
   color: #010606;
