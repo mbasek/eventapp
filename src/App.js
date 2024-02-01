@@ -25,7 +25,6 @@ function App() {
     signOut(getAuth())
       .then(() => {
         localStorage.removeItem("user");
-        // Sign-out successful.
         console.log("Logout Success");
         setUser(null);
         navigate("/");
