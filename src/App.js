@@ -43,10 +43,6 @@ function App() {
       {shouldRenderNavigation && <Navigation user={user} logOut={logOut} />}
       <Routes>
         <Route path="/" element={<Hero />} />
-        {/* <Route path="/posts" element={<Posts />}>
-            <Route index element={<PostLists />} />
-            <Route path=":slug" element={<Post />} />
-          </Route> */}
         <Route path="/events" element={<Events />} />
         <Route path="/login" element={<Login onLogin={setUser} />} />
         <Route path="/register" element={<Register />} />

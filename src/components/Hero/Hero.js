@@ -59,7 +59,7 @@ const Hero = () => {
       </div>
       <div className={styles["hero-content"]}>
         <h1 className={styles["hero-h1"]}>Create your Event</h1>
-        <p className={styles["hero-p"]}>Create your own event</p>
+        <p className={styles["hero-p"]}>Do you want to create your event in a simple way? You are in the right place!</p>
         <div className={styles["hero-button__wrap"]}>
           <HeroButton
             to="/createevent"

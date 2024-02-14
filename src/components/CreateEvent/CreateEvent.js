@@ -241,9 +241,6 @@ const CreateEvent = ({ user }) => {
     setEditingEvent(event);
   };
 
-  // if (!user) {
-  //   return <Navigate to="/login" replace />;
-  // }
 
   const filteredUserEvents = userEvents.filter((event) =>
     event.name.toLowerCase().includes(searchTerm.toLowerCase())
