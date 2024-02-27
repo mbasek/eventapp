@@ -40,7 +40,9 @@
   -o-object-fit: cover;
   object-fit: cover;
   background: #232a34;
+  position: fixed;
 }
+
 
 .hero-content {
   z-index: 3;

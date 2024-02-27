@@ -19,8 +19,6 @@ const Login = ({ onLogin, setUser }) => {
         console.log("Login Success!");
       })
       .catch((error) => {
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
         console.log("Error login! Handle properly!");
         alert("Wrong email or password, try again!");
       });
